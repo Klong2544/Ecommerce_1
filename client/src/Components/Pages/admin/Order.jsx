@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import NavBar from "../../Layouts/NavBar";
+import Footter from "../../Layouts/Footter";
 import {
   getOrderAdmin,
   updateStatusOrder,
@@ -149,6 +150,9 @@ const Order = () => {
               </p>
             </div>
           ))}
+        <div className="w-full">
+          <Footter />
+        </div>
       </div>
     </div>
   );

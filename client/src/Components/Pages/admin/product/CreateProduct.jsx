@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import NavBar from "../../../Layouts/NavBar";
+import Footter from "../../../Layouts/Footter";
 import { useSelector } from "react-redux";
 import { getallcategory } from "../../../Functions/category";
 import ModelCreateProduct from "../../../Model/ModelCreateProduct";
@@ -119,6 +120,9 @@ const CreateProduct = () => {
         </div>
         <div className="mt-3">{ShowCreateProduct()}</div>
       </div>
+      <div className="w-full">
+          <Footter />
+        </div>
     </div>
   );
 };

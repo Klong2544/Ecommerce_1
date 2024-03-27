@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import NavBar from "../../Layouts/NavBar";
+import Footter from "../../Layouts/Footter";
 import {
   getAllUser,
   changRole,
@@ -100,9 +101,9 @@ const ManageAdmin = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="overflow-hidden h-screen">
+    <div className="overflow-hidden ">
       <NavBar />
-      <div className="w-full h-screen flex justify-start bg-gray-200 overflow-y-auto max-h-screen">
+      <div className="w-full h-screen flex flex-col justify-between  bg-gray-200 overflow-y-auto max-h-screen">
         <table className=" w-full h-3/5 border border-gray-300 ">
           <thead>
             <tr className="text-center">
@@ -118,7 +119,9 @@ const ManageAdmin = () => {
             {data.map((item, index) => (
               <tr key={index} className="border border-gray-300">
                 <th>{index + 1}</th>
-                <td className="text-black text-[14px] md:text-[16px]">{item.username}</td>
+                <td className="text-black text-[14px] md:text-[16px]">
+                  {item.username}
+                </td>
                 <td>
                   <select
                     className="select select-bordered w-full max-w-xs bg-gray-300 text-gray-700"
@@ -161,7 +164,9 @@ const ManageAdmin = () => {
                   </button>
                   <dialog id="my_modal_1" className="modal">
                     <div className="modal-box  flex flex-col items-center gap-5 bg-gray-200">
-                      <h4 className="text-2xl text-gray-700">เปลี่ยนรหัสผ่าน</h4>
+                      <h4 className="text-2xl text-gray-700">
+                        เปลี่ยนรหัสผ่าน
+                      </h4>
                       <input
                         type="text"
                         name="password"
@@ -189,6 +194,9 @@ const ManageAdmin = () => {
             ))}
           </tbody>
         </table>
+        <div className="w-full">
+          <Footter />
+        </div>
       </div>
     </div>
   );
